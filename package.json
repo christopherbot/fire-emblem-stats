@@ -1,0 +1,11 @@
+{
+  "name": "fire-emblem-stats",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:christopherbot/fire-emblem-stats.git",
+  "author": "Chris Bot <chrisadambot@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
