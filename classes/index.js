@@ -9,3 +9,10 @@ export {
   cavalier,
   paladin,
 }
+
+export default [
+  lynLord,
+  bladeLord,
+  cavalier,
+  paladin,
+]
