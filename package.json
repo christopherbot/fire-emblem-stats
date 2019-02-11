@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "character": "node ./scripts/character/index.js"
   },
   "dependencies": {
     "react": "^16.7.0",

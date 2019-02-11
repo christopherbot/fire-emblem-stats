@@ -5,8 +5,8 @@ import affinities from './affinities'
 
 import './index.css'
 
-const baseClass = classes.find(cls => cls.id === lyn.baseClass)
-const affinity = affinities.find(afn => afn.id === lyn.affinity)
+const baseClass = classes.find(cls => cls.id === lyn.baseClassId)
+const affinity = affinities.find(afn => afn.id === lyn.affinityId)
 
 export default () =>
   <div>

@@ -6,8 +6,8 @@ export default {
   id: uuid(),
   name: 'Lyn',
   game: 'FE7',
-  baseClass: lynLord.id,
-  promoClass: bladeLord.id,
+  baseClassId: lynLord.id,
+  promoClassId: bladeLord.id,
   baseStats: {
     lynMode: {
       lvl: 1,
@@ -43,7 +43,7 @@ export default {
     def: 20,
     res: 30,
   },
-  affinity: wind.id,
+  affinityId: wind.id,
   recruitChapter: {
     lynMode: 'Prologue',
     eliwoodMode: '15',
