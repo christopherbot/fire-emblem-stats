@@ -1,0 +1,85 @@
+import uuid from 'uuid/v4'
+import { __baseClass__, __promoClass__ } from './../classes'
+import { __affinity__ } from './../affinities'
+import {__supportCharacter__
+} from './../characters'
+
+export default {
+  id: uuid(),
+  name: '__name__',
+  game: '__game__',
+  baseClassId: __baseClass__.id,
+  promoClassId: __promoClass__.id,
+  baseStats: {
+    lynMode: {
+      lvl: __lmBaseLvl__,
+      hp: __lmBaseHp__,
+      atk: __lmBaseAtk__,
+      skl: __lmBaseSkl__,
+      spd: __lmBaseSpd__,
+      lck: __lmBaseLck__,
+      def: __lmBaseDef__,
+      res: __lmBaseRes__,
+      con: __lmBaseCon__,
+    },
+    ehMode: {
+      lvl: __ehmBaseLvl__,
+      hp: __ehmBaseHp__,
+      atk: __ehmBaseAtk__,
+      skl: __ehmBaseSkl__,
+      spd: __ehmBaseSpd__,
+      lck: __ehmBaseLck__,
+      def: __ehmBaseDef__,
+      res: __ehmBaseRes__,
+      con: __ehmBaseCon__,
+    },
+    __hmBaseStats__
+    hardMode: {
+      lvl: __hmBaseLvl__,
+      hp: __hmBaseHp__,
+      atk: __hmBaseAtk__,
+      skl: __hmBaseSkl__,
+      spd: __hmBaseSpd__,
+      lck: __hmBaseLck__,
+      def: __hmBaseDef__,
+      res: __hmBaseRes__,
+      con: __hmBaseCon__,
+    },
+    __hmBaseStats__
+  },
+  growths: {
+    meta: 'values are percentages',
+    hp: __hpGrowth__,
+    atk: __atkGrowth__,
+    skl: __sklGrowth__,
+    spd: __spdGrowth__,
+    lck: __lckGrowth__,
+    def: __defGrowth__,
+    res: __resGrowth__,
+  },
+  affinityId: __affinity__.id,
+  recruit: {
+    __lmRecruit__
+    lynMode: {
+      chapter: '__lmRecruitChapter__',
+      method: '__lmRecruitMethod__'
+    },
+    __lmRecruit__
+    eliwoodMode: {
+      chapter: '__emRecruitChapter__',
+      method: '__emRecruitMethod__',
+    },
+    hectorMode: {
+      chapter: '__hmRecruitChapter__',
+      method: '__hmRecruitMethod__',
+    },
+  },
+  supports: [
+  __supportsTemplate__
+    {
+      characterId: __supportCharacter__.id,
+      basePoints: __supportBasePoints__,
+      pointGain: __supportPointGain__,
+    },__supportsTemplate__
+  ],
+}
