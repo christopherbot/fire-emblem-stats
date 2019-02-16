@@ -1,11 +1,20 @@
 import uuid from 'uuid/v4'
-import { wind } from './../affinities'
 import { lynLord, bladeLord } from './../classes'
+import { wind } from './../affinities'
+import {
+  eliwood,
+  hector,
+  florina,
+  rath,
+  kent,
+  will,
+  wallace,
+} from './../characters'
 
 export default {
   id: uuid(),
   name: 'Lyn',
-  game: 'FE7',
+  game: 'fe7',
   baseClassId: lynLord.id,
   promoClassId: bladeLord.id,
   baseStats: {
@@ -31,7 +40,6 @@ export default {
       res: 0,
       con: 5,
     },
-    hardMode: null,
   },
   growths: {
     meta: 'values are percentages',
@@ -39,43 +47,60 @@ export default {
     atk: 40,
     skl: 60,
     spd: 60,
-    lck: 45,
+    lck: 55,
     def: 20,
     res: 30,
   },
   affinityId: wind.id,
-  recruitChapter: {
-    lynMode: 'Prologue',
-    eliwoodMode: '15',
-    hectorMode: '16',
+  recruit: {
+    lynMode: {
+      chapter: 'Prologue',
+      method: 'start',
+    },
+    eliwoodMode: {
+      chapter: '15',
+      method: 'start',
+    },
+    hectorMode: {
+      chapter: '16',
+      method: 'start',
+    },
   },
-  supports: [{
-    character: 'Eliwood',
-    basePoints: 10,
-    pointGain: 2,
-  }, {
-    character: 'Hector',
-    basePoints: 0,
-    pointGain: 3,
-  }, {
-    character: 'Florina',
-    basePoints: 76,
-    pointGain: 4,
-  }, {
-    character: 'Rath',
-    basePoints: 15,
-    pointGain: 4,
-  }, {
-    character: 'Kent',
-    basePoints: 20,
-    pointGain: 3,
-  }, {
-    character: 'Wil',
-    basePoints: 17,
-    pointGain: 3,
-  }, {
-    character: 'Wallace',
-    basePoints: 15,
-    pointGain: 2,
-  }],
+  supports: [
+    {
+      characterId: eliwood.id,
+      basePoints: 10,
+      pointGain: 2,
+    },
+    {
+      characterId: hector.id,
+      basePoints: 0,
+      pointGain: 3,
+    },
+    {
+      characterId: florina.id,
+      basePoints: 76,
+      pointGain: 4,
+    },
+    {
+      characterId: rath.id,
+      basePoints: 15,
+      pointGain: 4,
+    },
+    {
+      characterId: kent.id,
+      basePoints: 20,
+      pointGain: 3,
+    },
+    {
+      characterId: will.id,
+      basePoints: 17,
+      pointGain: 3,
+    },
+    {
+      characterId: wallace.id,
+      basePoints: 15,
+      pointGain: 2,
+    },
+  ],
 }
