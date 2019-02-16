@@ -180,24 +180,26 @@ const main = async () => {
     }
 
     if (Array.isArray(answer)) {
-      const arrayItemPlaceholder = getPlaceholder(`${param}Template`)
+      const arrayItemPlaceholder = getPlaceholder(`${param}Item`)
       const arrayItemMarker = `\\s*${arrayItemPlaceholder}([\\s\\S]*?)${arrayItemPlaceholder}`
       const arrayItemTemplate = template.match(new RegExp(arrayItemMarker))[1]
-
 
       let arrayItems = ''
       answer.forEach((subAnswer, i) => {
         let arrayItem = arrayItemTemplate
         Object.keys(subAnswer).forEach((key) => {
+          // replace imports
           template = template.replace(
             new RegExp(getPlaceholder(key), 'g'),
             `\n  ${subAnswer[key]},${getPlaceholder(key)}`
           )
 
+          // remove final import placeholder
           if (answer.length - 1 === i) {
             template = template.replace(new RegExp(getPlaceholder(key), 'g'), '')
           }
 
+          // replace array item placeholders
           arrayItem = arrayItem.replace(new RegExp(getPlaceholder(key), 'g'), subAnswer[key])
         })
 

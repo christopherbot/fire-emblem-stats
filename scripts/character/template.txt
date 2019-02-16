@@ -75,11 +75,11 @@ export default {
     },
   },
   supports: [
-  __supportsTemplate__
+  __supportsItem__
     {
       characterId: __supportCharacter__.id,
       basePoints: __supportBasePoints__,
       pointGain: __supportPointGain__,
-    },__supportsTemplate__
+    },__supportsItem__
   ],
 }
