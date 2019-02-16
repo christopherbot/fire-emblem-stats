@@ -62,7 +62,7 @@ export default {
     __lmRecruit__
     lynMode: {
       chapter: '__lmRecruitChapter__',
-      method: '__lmRecruitMethod__'
+      method: '__lmRecruitMethod__',
     },
     __lmRecruit__
     eliwoodMode: {

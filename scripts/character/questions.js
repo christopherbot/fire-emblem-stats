@@ -3,6 +3,7 @@ module.exports = [{
   label: 'Character name',
   type: 'string',
   variableName: true,
+  titleCase: true,
 }, {
   param: 'baseClass',
   label: 'Base class',

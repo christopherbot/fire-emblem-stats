@@ -63,6 +63,10 @@ const main = async () => {
 
             answer = answer[0].toLowerCase() + answer.substr(1)
           }
+
+          if (question.titleCase) {
+            answer = answer[0].toUpperCase() + answer.substr(1)
+          }
         }
 
         // validate booleans
