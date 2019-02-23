@@ -2,9 +2,8 @@ const path = require('path')
 const readline = require('readline')
 const fs = require('fs')
 const colors = require('colors/safe')
-
-const isDefined = value => value !== undefined && value !== null
-
+const askQuestion = require('../askQuestion')
+const updateAnswers = require('../updateAnswers')
 const questions = require('./questions')
 
 const { red, green, cyan } = colors
@@ -14,116 +13,24 @@ const rl = readline.createInterface({
   output: process.stdout,
 })
 
-const ROOT = path.join(__dirname, '../..')
-const TEMPLATE_FILE_PATH = `${__dirname}/template.txt`
-
-const getPlaceholder = param => `__${param}__`
-
 const main = async () => {
   const defaultAnswers = {
     game: 'fe7', // this is constant until more games are supported
   }
 
-  const answers = {
+  let answers = {
     ...defaultAnswers,
   }
 
-  const askQuestion = question =>
-    new Promise((resolve, reject) => {
-      if (answers[question.prerequisite] === false) {
-        resolve()
-
-        return
-      }
-
-      const questionLabel = `${
-        isDefined(question.labelPrefix)
-          ? ` ${question.labelPrefix}`
-          : ''
-      }${question.label}${
-        isDefined(question.labelSuffix)
-          ? ` ${question.labelSuffix}`
-          : ''
-      }`
-
-      rl.question(`${questionLabel}: `, (answer) => {
-        // validate strings that are used as variable names
-        if (question.type === 'string') {
-          const startsWithValidCharacter = string => /^[a-zA-Z_]/.test(string)
-
-          if (question.variableName) {
-            if (!startsWithValidCharacter(answer)) {
-              reject({
-                type: 'invalid_type',
-                message: 'Please enter a valid string. It must begin with a letter or underscore.',
-              })
-
-              return
-            }
-
-            answer = answer[0].toLowerCase() + answer.substr(1)
-          }
-
-          if (question.titleCase) {
-            answer = answer[0].toUpperCase() + answer.substr(1)
-          }
-        }
-
-        // validate booleans
-        if (question.type === 'boolean') {
-          // convert y/n answers into booleans
-          if (answer === 'y' || answer === 'Y') {
-            answer = true
-          } else if (answer === 'n' || answer === 'N') {
-            answer = false
-          } else {
-            reject({
-              type: 'invalid_type',
-              message: 'Please enter "y" or "n".',
-            })
-
-            return
-          }
-        }
-
-        // validate numbers
-        if (question.type === 'number') {
-          answer = parseInt(answer)
-
-          if (isNaN(answer)) {
-            reject({
-              type: 'invalid_type',
-              message: 'Please enter a number.',
-            })
-
-            return
-          }
-        }
-
-        // build out an array for answers to sub-question
-        if (question.parent) {
-          if (!answers[question.parent]) {
-            answers[question.parent] = []
-          }
-
-          if (!answers[question.parent][question.index]) {
-            answers[question.parent][question.index] = {}
-          }
-
-          answers[question.parent][question.index][question.param] = answer
-        } else {
-          // else, simply store the answer on the object
-          answers[question.param] = answer
-        }
-
-        resolve()
-      })
-    })
-
   for (const question of questions) {
+    if (answers[question.prerequisite] === false) {
+      continue
+    }
+
     while (true) {
       try {
-        await askQuestion(question)
+        const answer = await askQuestion(rl, question)
+        answers = updateAnswers(answers, question, answer)
 
         if (question.subQuestions) {
           const numberOfSubQuestionsArray = [...Array(answers[question.param])]
@@ -135,7 +42,8 @@ const main = async () => {
 
               while (true) {
                 try {
-                  await askQuestion(subQuestion)
+                  const subAnswer = await askQuestion(rl, subQuestion)
+                  answers = updateAnswers(answers, subQuestion, subAnswer)
 
                   break
                 } catch (error) {
@@ -158,7 +66,10 @@ const main = async () => {
   console.log('')
   console.log('Using answers:', answers)
 
+  const TEMPLATE_FILE_PATH = `${__dirname}/template.txt`
   let template = fs.readFileSync(TEMPLATE_FILE_PATH, 'utf8')
+
+  const getPlaceholder = param => `__${param}__`
 
   Object.keys(answers).forEach((param) => {
     const placeholder = getPlaceholder(param)
@@ -216,6 +127,7 @@ const main = async () => {
     template = template.replace(new RegExp(placeholder, 'g'), answer)
   })
 
+  const ROOT = path.join(__dirname, '../..')
   const characterFilePath = path.join(ROOT, 'src/characters', `${answers.name.toLowerCase()}.js`)
   fs.writeFileSync(characterFilePath, template)
 
