@@ -14,6 +14,15 @@ const askQuestion = (rl, question) => new Promise((resolve, reject) => {
   rl.question(`${questionLabel}: `, (answer) => {
     // validate strings that are used as variable names
     if (question.type === 'string') {
+      if (question.oneOf && !question.oneOf.includes(answer)) {
+        reject({
+          type: 'invalid_type',
+          message: `Please enter one of the following values: ${question.oneOf.join(', ')}`,
+        })
+
+        return
+      }
+
       const startsWithValidCharacter = string => /^[a-zA-Z_]/.test(string)
 
       if (question.variableName) {

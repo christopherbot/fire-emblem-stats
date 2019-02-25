@@ -130,12 +130,12 @@ const main = async () => {
   })
 
   const ROOT = path.join(__dirname, '../..')
-  const characterFilePath = path.join(ROOT, 'src/characters', `${answers.name.toLowerCase()}.js`)
-  fs.writeFileSync(characterFilePath, template)
+  const classFilePath = path.join(ROOT, 'src/classes', `${answers.name.toLowerCase()}.js`)
+  fs.writeFileSync(classFilePath, template)
 
   console.log('')
-  console.log(green('Character entry complete!'))
-  console.log(green('See file written at'), cyan(characterFilePath))
+  console.log(green('Class entry complete!'))
+  console.log(green('See file written at'), cyan(classFilePath))
 }
 
 main()

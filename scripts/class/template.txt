@@ -1,0 +1,70 @@
+import uuid from 'uuid/v4'
+import { __associatedClass__ } from './../classes'
+
+export default {
+  id: uuid(),
+  name: '__name__',
+  type: '__type__',
+  associatedClassId: __associatedClass__.id,
+  mov: __mov__,
+  weapons: [
+  __weaponsItem__
+    '__weapon__',__weaponsItem__
+  ],
+  skills: [
+  __skillsItem__
+    '__skill__',__skillsItem__
+  ],
+  promoItems: [
+  __promoItemsItem__
+    '__promoItem__',__promoItemsItem__
+  ],
+  promoGains: {
+    __maleGains__
+    male: {
+      hp: __maleHpGain__,
+      atk: __maleAtkGain__,
+      skl: __maleSklGain__,
+      spd: __maleSpdGain__,
+      lck: __maleLckGain__,
+      def: __maleDefGain__,
+      res: __maleResGain__,
+    },
+    __maleGains__
+    __femaleGains__
+    female: {
+      hp: __femaleHpGain__,
+      atk: __femaleAtkGain__,
+      skl: __femaleSklGain__,
+      spd: __femaleSpdGain__,
+      lck: __femaleLckGain__,
+      def: __femaleDefGain__,
+      res: __femaleResGain__,
+    },
+    __femaleGains__
+  },
+  maxStats: {
+    __maleMaxStats__
+    male: {
+      hp: __maleMaxHp__,
+      atk: __maleMaxAtk__,
+      skl: __maleMaxSkl__,
+      spd: __maleMaxSpd__,
+      lck: __maleMaxLck__,
+      def: __maleMaxDef__,
+      res: __maleMaxRes__,
+    },
+    __maleMaxStats__
+    __femaleMaxStats__
+    female: {
+      hp: __femaleMaxHp__,
+      atk: __femaleMaxAtk__,
+      skl: __femaleMaxSkl__,
+      spd: __femaleMaxSpd__,
+      lck: __femaleMaxLck__,
+      def: __femaleMaxDef__,
+      res: __femaleMaxRes__,
+    },
+    __femaleMaxStats__
+  },
+}
