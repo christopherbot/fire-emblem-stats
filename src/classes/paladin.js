@@ -1,11 +1,13 @@
 import uuid from 'uuid/v4'
+import { cavalier } from './../classes'
 
 export default {
   id: uuid(),
   name: 'Paladin',
+  type: 'promo',
   weapons: ['Sword', 'Lance', 'Axe'],
   mov: 8,
-  baseClass: 'Cavalier',
+  baseClassId: cavalier.id,
   promoGains: {
     male: {
       hp: 2,
