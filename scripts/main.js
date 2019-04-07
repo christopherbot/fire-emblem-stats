@@ -18,7 +18,14 @@ module.exports = async (questions, defaultAnswers, templatePath, outputPath) => 
   }
 
   for (const question of questions) {
-    if (answers[question.prerequisite] === false) {
+    const prerequisiteNotSatisfied =
+      answers[question.prerequisite] === null ||
+      answers[question.prerequisite] === false ||
+      (question.prerequisiteValue && answers[question.prerequisite] !== question.prerequisiteValue)
+
+    if (prerequisiteNotSatisfied) {
+      answers = updateAnswers(answers, question, null)
+
       continue
     }
 

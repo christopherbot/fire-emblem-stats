@@ -52,6 +52,8 @@ module.exports = [{
   param: 'maleGains',
   label: 'Does this class have male stat gains? [y/n]',
   type: 'boolean',
+  prerequisite: 'type',
+  prerequisiteValue: 'promo',
 }, {
   param: 'maleHpGain',
   label: '[Male] Hp gain',
@@ -101,6 +103,8 @@ module.exports = [{
   param: 'femaleGains',
   label: 'Does this class have female stat gains? [y/n]',
   type: 'boolean',
+  prerequisite: 'type',
+  prerequisiteValue: 'promo',
 }, {
   param: 'femaleHpGain',
   label: '[Female] Hp gain',
@@ -150,6 +154,8 @@ module.exports = [{
   param: 'maleMaxStats',
   label: 'Does this class have male max stat? [y/n]',
   type: 'boolean',
+  prerequisite: 'type',
+  prerequisiteValue: 'promo',
 }, {
   param: 'maleMaxHp',
   label: '[Male] Max Hp',
@@ -199,6 +205,8 @@ module.exports = [{
   param: 'femaleMaxStats',
   label: 'Does this class have female max stat? [y/n]',
   type: 'boolean',
+  prerequisite: 'type',
+  prerequisiteValue: 'promo',
 }, {
   param: 'femaleMaxHp',
   label: '[Female] Max Hp',
