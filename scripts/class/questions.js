@@ -29,14 +29,14 @@ module.exports = [{
     parent: 'weapons',
   }],
 }, {
-  param: 'numberOfSkills',
-  label: 'How many skills does this class have?',
+  param: 'numberOfNotes',
+  label: 'How many notes does this class have?',
   type: 'number',
   subQuestions: [{
-    param: 'skill',
-    label: 'Skill',
+    param: 'note',
+    label: 'note',
     type: 'string',
-    parent: 'skills',
+    parent: 'notes',
   }],
 }, {
   param: 'numberOfPromoItems',

@@ -11,9 +11,9 @@ export default {
   __weaponsItem__
     '__weapon__',__weaponsItem__
   ],
-  skills: [
-  __skillsItem__
-    '__skill__',__skillsItem__
+  notes: [
+  __notesItem__
+    '__note__',__notesItem__
   ],
   promoItems: [
   __promoItemsItem__
