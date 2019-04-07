@@ -29,6 +29,8 @@ export default {
       lck: __maleLckGain__,
       def: __maleDefGain__,
       res: __maleResGain__,
+      con: __maleConGain__,
+      mov: __maleMovGain__,
     },
     __maleGains__
     __femaleGains__
@@ -40,6 +42,8 @@ export default {
       lck: __femaleLckGain__,
       def: __femaleDefGain__,
       res: __femaleResGain__,
+      con: __femaleConGain__,
+      mov: __femaleMovGain__,
     },
     __femaleGains__
   },
@@ -53,6 +57,8 @@ export default {
       lck: __maleMaxLck__,
       def: __maleMaxDef__,
       res: __maleMaxRes__,
+      con: __maleMaxCon__,
+      mov: __maleMaxMov__,
     },
     __maleMaxStats__
     __femaleMaxStats__
@@ -64,6 +70,8 @@ export default {
       lck: __femaleMaxLck__,
       def: __femaleMaxDef__,
       res: __femaleMaxRes__,
+      con: __femaleMaxCon__,
+      mov: __femaleMaxMov__,
     },
     __femaleMaxStats__
   },

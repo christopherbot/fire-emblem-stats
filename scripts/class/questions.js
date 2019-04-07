@@ -88,6 +88,16 @@ module.exports = [{
   type: 'number',
   prerequisite: 'maleGains',
 }, {
+  param: 'maleConGain',
+  label: '[Male] Con gain',
+  type: 'number',
+  prerequisite: 'maleGains',
+}, {
+  param: 'maleMovGain',
+  label: '[Male] Mov gain',
+  type: 'number',
+  prerequisite: 'maleGains',
+}, {
   param: 'femaleGains',
   label: 'Does this class have female stat gains? [y/n]',
   type: 'boolean',
@@ -124,6 +134,16 @@ module.exports = [{
 }, {
   param: 'femaleResGain',
   label: '[Female] Res gain',
+  type: 'number',
+  prerequisite: 'femaleGains',
+}, {
+  param: 'femaleConGain',
+  label: '[Female] Con gain',
+  type: 'number',
+  prerequisite: 'femaleGains',
+}, {
+  param: 'femaleMovGain',
+  label: '[Female] Mov gain',
   type: 'number',
   prerequisite: 'femaleGains',
 }, {
@@ -166,6 +186,16 @@ module.exports = [{
   type: 'number',
   prerequisite: 'maleMaxStats',
 }, {
+  param: 'maleMaxCon',
+  label: '[Male] Max Con',
+  type: 'number',
+  prerequisite: 'maleMaxStats',
+}, {
+  param: 'maleMaxMov',
+  label: '[Male] Max Mov',
+  type: 'number',
+  prerequisite: 'maleMaxStats',
+}, {
   param: 'femaleMaxStats',
   label: 'Does this class have female max stat? [y/n]',
   type: 'boolean',
@@ -202,6 +232,16 @@ module.exports = [{
 }, {
   param: 'femaleMaxRes',
   label: '[Female] Max Res',
+  type: 'number',
+  prerequisite: 'femaleMaxStats',
+}, {
+  param: 'femaleMaxCon',
+  label: '[Female] Max Con',
+  type: 'number',
+  prerequisite: 'femaleMaxStats',
+}, {
+  param: 'femaleMaxMov',
+  label: '[Female] Max Mov',
   type: 'number',
   prerequisite: 'femaleMaxStats',
 }]
