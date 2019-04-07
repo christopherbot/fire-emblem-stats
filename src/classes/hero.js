@@ -1,44 +1,45 @@
 import uuid from 'uuid/v4'
-import { lynLord } from './../classes'
+import { mercenary } from './../classes'
 
 export default {
   id: uuid(),
-  name: 'Blade Lord',
+  name: 'Hero',
   type: 'promo',
-  associatedClassId: lynLord.id,
+  associatedClassId: mercenary.id,
   mov: 6,
   weapons: [
     'Sword',
-    'Bow',
+    'Axe',
   ],
   notes: [
   ],
   promoItems: [
-    'Heaven Seal',
+    'Hero Crest',
+    'Earth Seal',
   ],
   promoGains: {
-    female: {
-      hp: 3,
-      atk: 2,
+    male: {
+      hp: 4,
+      atk: 0,
       skl: 2,
-      spd: 0,
+      spd: 2,
       lck: 0,
-      def: 3,
-      res: 5,
+      def: 2,
+      res: 2,
       con: 1,
       mov: 1,
     },
   },
   maxStats: {
-    female: {
+    male: {
       hp: 60,
-      atk: 24,
-      skl: 29,
-      spd: 30,
+      atk: 25,
+      skl: 30,
+      spd: 26,
       lck: 30,
-      def: 22,
+      def: 25,
       res: 22,
-      con: 25,
+      con: 20,
       mov: 15,
     },
   },

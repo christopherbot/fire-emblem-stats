@@ -1,30 +1,32 @@
 import uuid from 'uuid/v4'
-import { lynLord } from './../classes'
+import { troubadour } from './../classes'
 
 export default {
   id: uuid(),
-  name: 'Blade Lord',
+  name: 'Valkyrie',
   type: 'promo',
-  associatedClassId: lynLord.id,
-  mov: 6,
+  associatedClassId: troubadour.id,
+  mov: 8,
   weapons: [
-    'Sword',
-    'Bow',
+    'Anima',
+    'Staff',
   ],
   notes: [
+    'Horseback',
   ],
   promoItems: [
-    'Heaven Seal',
+    'Guiding Ring',
+    'Earth Seal',
   ],
   promoGains: {
     female: {
       hp: 3,
       atk: 2,
-      skl: 2,
+      skl: 1,
       spd: 0,
       lck: 0,
-      def: 3,
-      res: 5,
+      def: 2,
+      res: 3,
       con: 1,
       mov: 1,
     },
@@ -32,12 +34,12 @@ export default {
   maxStats: {
     female: {
       hp: 60,
-      atk: 24,
-      skl: 29,
-      spd: 30,
+      atk: 25,
+      skl: 24,
+      spd: 25,
       lck: 30,
-      def: 22,
-      res: 22,
+      def: 24,
+      res: 28,
       con: 25,
       mov: 15,
     },

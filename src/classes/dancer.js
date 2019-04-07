@@ -1,22 +1,20 @@
 import uuid from 'uuid/v4'
-import { paladin } from './../classes'
+import { bard } from './../classes'
 
 export default {
   id: uuid(),
-  name: 'Cavalier',
+  name: 'Dancer',
   type: 'base',
-  associatedClassId: paladin.id,
-  mov: 7,
+  associatedClassId: bard.id,
+  mov: 5,
   weapons: [
-    'Sword',
-    'Lance',
   ],
   notes: [
-    'Horseback',
+    'Dance',
+    'Rings',
+    'Ninian exclusive',
   ],
   promoItems: [
-    'Knight Crest',
-    'Earth Seal',
   ],
   maxStats: {
     hp: 60,

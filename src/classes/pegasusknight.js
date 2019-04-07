@@ -1,21 +1,20 @@
 import uuid from 'uuid/v4'
-import { paladin } from './../classes'
+import { falconKnight } from './../classes'
 
 export default {
   id: uuid(),
-  name: 'Cavalier',
+  name: 'Pegasus Knight',
   type: 'base',
-  associatedClassId: paladin.id,
+  associatedClassId: falconKnight.id,
   mov: 7,
   weapons: [
-    'Sword',
     'Lance',
   ],
   notes: [
-    'Horseback',
+    'Flying',
   ],
   promoItems: [
-    'Knight Crest',
+    'Elysian Whip',
     'Earth Seal',
   ],
   maxStats: {

@@ -1,11 +1,20 @@
 import uuid from 'uuid/v4'
+import { bladeLord } from './../classes'
 
 export default {
   id: uuid(),
   name: 'Lord (Lyn)',
-  weapons: ['Sword'],
+  type: 'base',
+  associatedClassId: bladeLord.id,
   mov: 5,
-  promoItems: ['Heaven Seal'],
+  weapons: [
+    'Sword',
+  ],
+  notes: [
+  ],
+  promoItems: [
+    'Heaven Seal',
+  ],
   maxStats: {
     hp: 60,
     atk: 20,
@@ -17,5 +26,4 @@ export default {
     con: 20,
     mov: 15,
   },
-  skills: null,
 }

@@ -5,9 +5,20 @@ export default {
   id: uuid(),
   name: 'Paladin',
   type: 'promo',
-  weapons: ['Sword', 'Lance', 'Axe'],
+  associatedClassId: cavalier.id,
   mov: 8,
-  baseClassId: cavalier.id,
+  weapons: [
+    'Sword',
+    'Lance',
+    'Axe',
+  ],
+  notes: [
+    'Horseback',
+  ],
+  promoItems: [
+    'Knight Crest',
+    'Earth Seal',
+  ],
   promoGains: {
     male: {
       hp: 2,
@@ -20,7 +31,6 @@ export default {
       con: 2,
       mov: 1,
     },
-    female: null,
   },
   maxStats: {
     male: {
@@ -46,5 +56,4 @@ export default {
       mov: 15,
     },
   },
-  skills: ['Canto']
 }
